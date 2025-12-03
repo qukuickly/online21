@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Bhai Online Khaiwal - भरोसा आपका इम्मानदारी हमारी</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(to right, #0f3460, #1a1a2e);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-left: 5px solid #FF9933;
+            border-right: 5px solid #138808;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+        
+        .sub-tagline {
+            font-size: 1.2rem;
+            color: #FFA500;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #FF9933, #138808, transparent);
+            margin: 20px 0;
+        }
+        
+        .market-section {
+            background: rgba(15, 52, 96, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .market-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #FFD700;
+            font-size: 1.4rem;
+        }
+        
+        .market-title i {
+            margin-right: 10px;
+            color: #FF9933;
+        }
+        
+        .market-list {
+            list-style: none;
+        }
+        
+        .market-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .market-item:hover {
+            background: rgba(15, 52, 96, 0.9);
+            transform: translateX(5px);
+        }
+        
+        .market-name {
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        
+        .market-time {
+            color: #FFA500;
+            font-weight: bold;
+        }
+        
+        .rates-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .rate-card {
+            background: linear-gradient(to bottom right, #0f3460, #1a1a2e);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            min-width: 200px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border-top: 4px solid #FF9933;
+        }
+        
+        .rate-type {
+            font-size: 1.3rem;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .rate-value {
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+        
+        .notice {
+            background: rgba(220, 20, 60, 0.2);
+            border-left: 5px solid crimson;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 25px 0;
+            color: #FFCCCB;
+        }
+        
+        .notice-title {
+            color: #FFA500;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notice-title i {
+            margin-right: 10px;
+        }
+        
+        .whatsapp-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .whatsapp-title {
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-btn i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .candles {
+            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 10px;
+            color: #FFD700;
+            margin: 20px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .market-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .whatsapp-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top WhatsApp Buttons -->
+        <div class="whatsapp-section">
+            <div class="whatsapp-title">WhatsApp पर संपर्क करें</div>
+            <div class="whatsapp-buttons">
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 1
+                </a>
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 2
+                </a>
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 3
+                </a>
+            </div>
+        </div>
+        
+        <header>
+            <h1>🇮🇳 राम भाई ऑनलाइन खाईवाल 🇮🇳</h1>
+            <div class="tagline">इम्मानदारी का दूसरा नाम</div>
+            <div class="sub-tagline">भरोसा आपका इम्मानदारी हमारी</div>
+        </header>
+        
+        <div class="divider"></div>
+        
+        <!-- Market Timings Section -->
+        <div class="market-section">
+            <div class="market-title">
+                <i class="fas fa-clock"></i> बाजार समय सारणी
+            </div>
+            <ul class="market-list">
+                <li class="market-item">
+                    <span class="market-name">दिल्ली बाजार</span>
+                    <span class="market-time">03:10 PM</span>
+                </li>
+                <li class="market-item">
+                    <span class="market-name">श्री गणेश</span>
+                    <span class="market-time">04:42 PM</span>
+                </li>
+                <li class="market-item">
+                    <span class="market-name">फरीदाबाद</span>
+                    <span class="market-time">06:10 PM</span>
+                </li>
+                <li class="market-item">
+                    <span class="market-name">गाज़ियाबाद</span>
+                    <span class="market-time">09:40 PM</span>
+                </li>
+                <li class="market-item">
+                    <span class="market-name">गली चोर</span>
+                    <span class="market-time">11:40 PM</span>
+                </li>
+                <li class="market-item">
+                    <span class="market-name">दिसावर</span>
+                    <span class="market-time">05:10 AM</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Rates Section -->
+        <div class="rates-section">
+            <div class="rate-card">
+                <div class="rate-type">जोड़ी रेट</div>
+                <div class="rate-value">10 के 970</div>
+            </div>
+            <div class="rate-card">
+                <div class="rate-type">हारुप रेट</div>
+                <div class="rate-value">100 के 970</div>
+            </div>
+        </div>
+        
+        <div class="candles">🕯🕯🕯🕯🕯🕯🕯🕯🕯</div>
+        
+        <!-- Important Notice -->
+        <div class="notice">
+            <div class="notice-title">
+                <i class="fas fa-exclamation-triangle"></i> जरूरी सूचना
+            </div>
+            <p>जोड़ी इंटू गलत / पेमेंट कम / टोटल गलत / डबल जोड़ी / हिसाब में गड़बड़ी / भुगतान कैंसल कर दिया जाएगा</p>
+        </div>
+        
+        <!-- Bottom WhatsApp Buttons -->
+        <div class="whatsapp-section">
+            <div class="whatsapp-title">अभी WhatsApp पर जुड़ें</div>
+            <div class="whatsapp-buttons">
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 4
+                </a>
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 5
+                </a>
+                <a href="https://wa.me/+919587204857" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp 6
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 राम भाई ऑनलाइन खाईवाल | सभी अधिकार सुरक्षित</p>
+            <p style="margin-top: 5px; font-size: 0.8rem;">Disclaimer: This is for demonstration purposes only.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for market items on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const marketItems = document.querySelectorAll('.market-item');
+            marketItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
+            
+            // Initialize items with hidden state
+            marketItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Add click event to WhatsApp buttons
+            const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Animation effect on click
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
